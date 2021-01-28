@@ -19,7 +19,8 @@ def infor_gathering(url):
         url=url+"/"
     print("Target URL --> "+url)
     try:
-        result=requests.get("%s"% url)
+        h={'user-agent':'Mozilla'}
+        result=requests.get("%s"% url,headers=h)
         etime=time.time() - stime
         if result.status_code != 200:
             print("[!]- Error --> check your url !")
