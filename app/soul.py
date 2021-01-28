@@ -44,7 +44,7 @@ def APP():
             ███████║╚██████╔╝╚██████╔╝███████╗
             ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝""")
     print("\n\t * WELCOME TO SOUL APP --> H4CK3R V1.0 *\n")
-    url=input("Emter Target URL ~$ ")
+    url=input("Enter Target URL ~$ ")
     if url == "quit":
         exit()
     print("Please wite ...")
