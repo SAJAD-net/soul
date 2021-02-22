@@ -1,6 +1,6 @@
 # Soul
 
-## fine, This is a tool for information gathering of request's headers
+## fine, This is a tool for information gathering from request's headers
 
 ## use following library:
 	1- requests
