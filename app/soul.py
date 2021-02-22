@@ -1,6 +1,7 @@
 #!/usr/bin/python3.9
 
 import requests
+from bs4 import BeautifulSoup
 import sys, os
 import argparse
 import time
@@ -9,9 +10,9 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-u","--url",required=False,help="url of target")
 #ap.add_argument("-i", "--info",nargs="?",required=True,help="information gathering")
 args=vars(ap.parse_args())
-#print(s)
-
-def infor_gathering(url):
+def header_gathering(url):
+    agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"+\
+    " (KHTML, like Gecko) Chrome/88.0.4324.182"
     stime=time.time()
     if "http://" and "https://" not in url:
         url="http://"+url
@@ -19,7 +20,7 @@ def infor_gathering(url):
         url=url+"/"
     print("Target URL --> "+url)
     try:
-        h={'user-agent':'Mozilla'}
+        h={'user-agent':agent}
         result=requests.get("%s"% url,headers=h)
         etime=time.time() - stime
         if result.status_code != 200:
@@ -44,15 +45,15 @@ def APP():
             ███████║╚██████╔╝╚██████╔╝███████╗
             ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝""")
     print("\n\t * WELCOME TO SOUL APP --> H4CK3R V1.0 *\n")
-    url=input("Enter Target URL ~$ ")
+    url=input("soul --> >>> ")
     if url == "quit":
         exit()
     print("Please wite ...")
-    infor_gathering(url)
+    header_gathering(url)
     
 def RUN():
     if url:=args["url"]:
-        infor_gathering(url)
+        header_gathering(url)
     else:
         APP()
 
