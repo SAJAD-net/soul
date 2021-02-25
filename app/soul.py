@@ -20,12 +20,12 @@ def header_gathering(url):
         url=url+"/"
     print("Target URL --> "+url)
     try:
-        h={'user-agent':agent}
+        h={'user-agent':agent, referer : "google.com"}
         result=requests.get("%s"% url,headers=h)
         etime=time.time() - stime
         if result.status_code != 200:
             print("[!]- Error --> check your url !")
-            print("total time --> %1.2f"%etime)
+            print("Total time --> %1.2f"%etime)
             exit()
         print("[+]- OK ,Query 1 Successfully !")
         print("Information :\n")
@@ -48,7 +48,6 @@ def APP():
     url=input("soul --> >>> ")
     if url == "quit":
         exit()
-    print("Please wite ...")
     header_gathering(url)
     
 def RUN():
