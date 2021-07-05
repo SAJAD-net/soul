@@ -1,6 +1,6 @@
 #!/usr/bin/python3.9
 
-import requests
+import requests, readline
 from bs4 import BeautifulSoup
 import sys, os
 import argparse
