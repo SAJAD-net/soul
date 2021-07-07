@@ -20,4 +20,4 @@
 	The second method:
 		python3 soul.py
 
-my email : sajadsajad.sch@gmail.com
+## my email : sajadsajad.sch@gmail.com
