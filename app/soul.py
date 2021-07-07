@@ -1,8 +1,7 @@
 #!/usr/bin/python3.9
 
 import requests, readline
-from bs4 import BeautifulSoup
-import sys, os
+import os
 import argparse
 import time
 
@@ -18,22 +17,22 @@ def header_gathering(url):
         url="http://"+url
     if url.endswith("/") == False:
         url=url+"/"
-    print("Target URL --> "+url)
+    print("target url ~ "+url)
     try:
         h={'user-agent':agent, referer : "google.com"}
         result=requests.get("%s"% url,headers=h)
         etime=time.time() - stime
         if result.status_code != 200:
-            print("[!]- Error --> check your url !")
-            print("Total time --> %1.2f"%etime)
+            print("[!]- eerror --> check your url !")
+            print("total time --> %1.2f"%etime)
             exit()
-        print("[+]- OK ,Query 1 Successfully !")
-        print("Information :\n")
+        print("[+]- ok, Query 1 Successfully !")
+        print("information :\n")
         for k,v in result.headers.items():
             print("\t %s --> %s"%(k,v))
         print("total time --> %1.2f"%etime)
     except:
-        print("[!]- Connection Error !")
+        print("[!]- connection error !")
         
 def APP():
     os.system("clear") if os.name == "posix" else os.system("cls")
@@ -45,7 +44,7 @@ def APP():
             ███████║╚██████╔╝╚██████╔╝███████╗
             ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝""")
     print("\n\t * WELCOME TO SOUL APP --> H4CK3R V1.0 *\n")
-    url=input("soul --> >>> ")
+    url=input("soul >>> ")
     if url == "quit":
         exit()
     header_gathering(url)
