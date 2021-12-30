@@ -19,7 +19,7 @@ def header_gathering(url):
         url=url+"/"
     print("target url ~ "+url)
     try:
-        h={'user-agent':agent, referer : "google.com"}
+        h={'user-agent':agent, 'referer' : "google.com"}
         result=requests.get("%s"% url,headers=h)
         etime=time.time() - stime
         if result.status_code != 200:
@@ -31,8 +31,8 @@ def header_gathering(url):
         for k,v in result.headers.items():
             print("\t %s ~ %s"%(k,v))
         print("total time ~ %1.2f"%etime)
-    except:
-        print("[!]- connection error !")
+    except Exception as e:
+        print(f"[!]- connection error !\n[e]- {e}")
         
 def APP():
     os.system("clear") if os.name == "posix" else os.system("cls")
