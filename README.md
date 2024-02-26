@@ -1,6 +1,6 @@
 # Soul <img src="https://img.shields.io/badge/License-GPLv3-blue"/>  <img src="https://img.shields.io/badge/python-up%20to%20date-red"/>  <img src="https://img.shields.io/badge/version-0.5-yellow"/>
  
-## fine, This is a tool for information gathering from http headers
+## http headers are important.
 
 
 	            ███████╗ ██████╗ ██╗   ██╗██╗
